@@ -1,18 +1,18 @@
-// const getPrice = () => {
-//     fetch("https://api.coindesk.com/v1/bpi/currentprice.json")
-//     .then(res => res.json())
-//     .then(data => console.log(data))
-//     .catch(error => console.log('ERROR'))
-// };
+const url = "https://api.coindesk.com/v1/bpi/currentprice.json";        // Initialize the API URL
+let priceSpace= document.getElementById("price");
+let price;                                                              // Initialize the price string variable 
 
-const url = "https://api.coindesk.com/v1/bpi/currentprice.json";
+// returns string of bitcoin price
+async function getPrice(){                                              // Async function(waits for data to execute) that returns the price of Bitcoin
+    const response = await fetch(url);                                  // fetch json
+    const data = await response.json();                                 // assign json to variable
+    //price = (data.bpi.USD.rate);                                        // assign the price string to variable
+    publishPrice((data.bpi.USD.rate));
 
-async function getPrice(){
-    const response = await fetch(url);
-    const data = await response.json();
-    console.log(data);
 }
 
-
 getPrice();
-console.log("hi")
+
+function publishPrice(prc){
+    priceSpace.innerHTML = `<div class="price">`+prc+`</div>`; // id price section
+}
