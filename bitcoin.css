@@ -12,14 +12,14 @@
 #title{                         /* ID for title */
 padding: auto;
 text-align: center;
-font-size: 3vw;
+font-size: min(60px,max(20px,2vw));
 font-weight: bold;
 
 }
 
 #description{                         /* ID for description */
     text-align: center;
-    font-size: 1vw;
+    font-size: min(60px,max(11px,1vw));
 }
 
 #price{                         /* ID for price */
@@ -38,7 +38,7 @@ font-weight: bold;
 .glitch span {
     top: 0;
     left: 0;
-    font-size: 8vw; 
+    font-size: min(600px,max(52px,5vw));
 }
 
 .glitch span:first-child {
