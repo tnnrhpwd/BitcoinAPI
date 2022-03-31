@@ -13,7 +13,7 @@ async function getPrice(){                                              // Async
 
 // function that outputs its input to the html page
 function publishPrice(prc){
-    priceSpace.innerHTML = `<div>`+prc+`</div>`; // ID price section
+    priceSpace.innerHTML = `<div>`+"$ "+prc+`</div>`; // ID price section
 }
 
 getPrice();
